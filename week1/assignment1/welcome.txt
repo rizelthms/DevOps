@@ -1,0 +1,5 @@
+Hi there!
+
+This file was provided by your teacher as part of the template for this assignment.
+
+You are free to modify it (though there is no need in this case), and it will be included when you create a pull request for review.
