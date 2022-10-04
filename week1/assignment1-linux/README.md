@@ -1,4 +1,4 @@
-# Week 1
+# Linux Basics
 
 ## Objective 1: Get your command line working
 ### Installing Windows Subsystem for Linux
