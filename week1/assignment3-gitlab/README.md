@@ -93,7 +93,7 @@ Merge requests (MRs) are the way you check source code changes into a branch. Wh
 
 Committing changes on the main branch is not really a best practice when you are working with others in the same repository. The recommended way to add features to the main code base is by creating feature branches and merging them with the main branch when the feature has been fully implemented.
 
-Branching in Gitlab is usually done by opening a merge request. You can open a merge request on any branch you have already created. Note that after you have created the merge request nothing is merged yet. In Gitlab a 'conversation' is opened between you and the maintainer of the project's the main branch. In practice the maintainer will provide feedback on the code and possibly ask for things to be implemented differently.
+Branching in Gitlab is usually done by opening a merge request. You can open a merge request on any branch you have already created. Note that after you have created the merge request nothing is merged yet. In Gitlab a 'conversation' is opened between you and the maintainer of the project's main branch. In practice the maintainer will provide feedback on the code and possibly ask for things to be implemented differently.
 
 To better track the merge requests you can associate them with issues. Go to GitLab and create an issue for storing the articles in a CSV file (assign this issue to yourself). Adjust your code so that is creates a timestamped CSV file every time the application is run. Store the rank, title and link to the article in this file.
 
