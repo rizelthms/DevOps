@@ -1,0 +1,167 @@
+ * Serving Flask app "/tmp/development/gitlab/lms42/lms42.app" (lazy loading)
+ * Environment: development
+ * Debug mode: on
+ * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 122-569-866
+127.0.0.1 - - [06/Jan/2021 10:04:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:04:00] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:04:01] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [06/Jan/2021 10:04:03] "GET /curriculum HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:04:03] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:04:03] "GET /static/tabs.js HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:04:03] "GET /static/details.js HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:04:05] "GET /curriculum/sql-practice HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:04:05] "GET /static/font.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:04:05] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:04:05] "GET /static/tabs.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:04:07] "GET /user/login HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:04:07] "GET /static/style.css HTTP/1.1" 304 -
+http://localhost:8000/user/link/5/oYhKJJWSagXBGekh
+127.0.0.1 - - [06/Jan/2021 10:04:17] "POST /user/login HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/tmp/development/gitlab/lms42/.venv/lib/python3.9/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/tmp/development/gitlab/lms42/.venv/lib/python3.9/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/tmp/development/gitlab/lms42/.venv/lib/python3.9/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/tmp/development/gitlab/lms42/.venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/tmp/development/gitlab/lms42/.venv/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/tmp/development/gitlab/lms42/.venv/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/tmp/development/gitlab/lms42/.venv/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/tmp/development/gitlab/lms42/.venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/tmp/development/gitlab/lms42/.venv/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/tmp/development/gitlab/lms42/.venv/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/tmp/development/gitlab/lms42/lms42/routes/login.py", line 97, in login
+    send_email(email, "Your login link", f"""
+  File "/tmp/development/gitlab/lms42/lms42/email.py", line 13, in send
+    smtp.login(os.environ['SMTP_USER'], os.environ['SMTP_PASSWORD'])
+  File "/usr/local/Cellar/python@3.9/3.9.0_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 734, in login
+    raise last_exception
+  File "/usr/local/Cellar/python@3.9/3.9.0_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 723, in login
+    (code, resp) = self.auth(
+  File "/usr/local/Cellar/python@3.9/3.9.0_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 646, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.3 Authentication unsuccessful [SD0PR03CA0042.eurprd03.prod.outlook.com]')
+127.0.0.1 - - [06/Jan/2021 10:04:17] "GET /user/login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:04:17] "GET /user/login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:04:17] "GET /user/login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:04:17] "GET /user/link/5/oYhKJJWSagXBGekh HTTP/1.1" 302 -
+127.0.0.1 - - [06/Jan/2021 10:04:17] "GET /curriculum HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:04:17] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:04:17] "GET /static/placeholder.png HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:04:17] "GET /static/tabs.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:04:17] "GET /static/details.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:04:21] "GET /curriculum/sql-practice HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:04:21] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:04:21] "GET /static/font.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:04:22] "GET /static/update-scores.js HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:04:22] "GET /static/tabs.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:04:22] "GET /static/placeholder.png HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:06:31] "GET /curriculum HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:06:31] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:06:31] "GET /static/placeholder.png HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:06:31] "GET /static/details.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:06:31] "GET /static/tabs.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:06:34] "GET /curriculum/joins HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:06:34] "GET /static/font.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:06:34] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:06:34] "GET /static/update-scores.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:06:34] "GET /static/tabs.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:06:34] "GET /static/placeholder.png HTTP/1.1" 304 -
+/tmp/development/gitlab/lms42/.venv/lib/python3.9/site-packages/webpreview/previews.py:51: GuessedAtParserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system ("html.parser"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
+The code that caused this warning is on line 51 of the file /tmp/development/gitlab/lms42/.venv/lib/python3.9/site-packages/webpreview/previews.py. To get rid of this warning, pass the additional argument 'features="html.parser"' to the BeautifulSoup constructor.
+  self._soup = BeautifulSoup(content, parser)
+link_preview web_preview failed: [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dq8O3IAeFaTE'
+link_preview web_preview failed: [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DFPqXPkQkMP0'
+link_preview web_preview failed: [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D9yeOJ0ZMUYw'
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fcode.tutsplus.com%2Farticles%2Fsql-for-beginners-part-3-database-relationships--net-8561'
+127.0.0.1 - - [06/Jan/2021 10:06:46] "GET /link_preview/https%3A%2F%2Fcode.tutsplus.com%2Farticles%2Fsql-for-beginners-part-3-database-relationships--net-8561 HTTP/1.1" 200 -
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D9yeOJ0ZMUYw'
+127.0.0.1 - - [06/Jan/2021 10:06:47] "GET /link_preview/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D9yeOJ0ZMUYw HTTP/1.1" 200 -
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dq8O3IAeFaTE'
+127.0.0.1 - - [06/Jan/2021 10:06:49] "GET /link_preview/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dq8O3IAeFaTE HTTP/1.1" 200 -
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DFPqXPkQkMP0'
+127.0.0.1 - - [06/Jan/2021 10:06:50] "GET /link_preview/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DFPqXPkQkMP0 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:07:10] "GET /curriculum/aggregate HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:07:10] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:07:10] "GET /static/font.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:07:10] "GET /static/update-scores.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:07:10] "GET /static/tabs.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:07:10] "GET /static/placeholder.png HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:07:10] "GET /curriculum/aggregate/static/overview-data-video-games.png HTTP/1.1" 200 -
+link_preview web_preview failed: [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DnNrgRVIzeHg'
+link_preview web_preview failed: [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DjcoJuc5e3RE'
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.geeksforgeeks.org%2Faggregate-functions-in-sql%2F'
+127.0.0.1 - - [06/Jan/2021 10:07:18] "GET /link_preview/https%3A%2F%2Fwww.geeksforgeeks.org%2Faggregate-functions-in-sql%2F HTTP/1.1" 200 -
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DnNrgRVIzeHg'
+127.0.0.1 - - [06/Jan/2021 10:07:20] "GET /link_preview/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DnNrgRVIzeHg HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:07:21] "GET /curriculum/modify-subqueries HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:07:21] "GET /static/font.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:07:21] "GET /static/style.css HTTP/1.1" 304 -
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.datacamp.com%2Fcommunity%2Ftutorials%2Fgroup-by-having-clause-sql'
+127.0.0.1 - - [06/Jan/2021 10:07:21] "GET /link_preview/https%3A%2F%2Fwww.datacamp.com%2Fcommunity%2Ftutorials%2Fgroup-by-having-clause-sql HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:07:21] "GET /static/placeholder.png HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:07:21] "GET /static/update-scores.js HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:07:21] "GET /static/tabs.js HTTP/1.1" 304 -
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DjcoJuc5e3RE'
+127.0.0.1 - - [06/Jan/2021 10:07:21] "GET /link_preview/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DjcoJuc5e3RE HTTP/1.1" 200 -
+link_preview web_preview failed: [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DB6WCH3X9oyE'
+link_preview web_preview failed: [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DUrbItNGZU48'
+link_preview web_preview failed: [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DVKlNt3pkLaw'
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.zentut.com%2Fsql-tutorial%2Fsql-insert%2F'
+127.0.0.1 - - [06/Jan/2021 10:07:28] "GET /link_preview/https%3A%2F%2Fwww.zentut.com%2Fsql-tutorial%2Fsql-insert%2F HTTP/1.1" 200 -
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.zentut.com%2Fsql-tutorial%2Fsql-delete%2F'
+127.0.0.1 - - [06/Jan/2021 10:07:28] "GET /link_preview/https%3A%2F%2Fwww.zentut.com%2Fsql-tutorial%2Fsql-delete%2F HTTP/1.1" 200 -
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.zentut.com%2Fsql-tutorial%2Fsql-update%2F'
+127.0.0.1 - - [06/Jan/2021 10:07:28] "GET /link_preview/https%3A%2F%2Fwww.zentut.com%2Fsql-tutorial%2Fsql-update%2F HTTP/1.1" 200 -
+link_preview web_preview failed: [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DsOvsDWIiKrY'
+link_preview web_preview failed: [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DGpC0XyiJPEo'
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.dofactory.com%2Fsql%2Fsubquery'
+127.0.0.1 - - [06/Jan/2021 10:07:35] "GET /link_preview/https%3A%2F%2Fwww.dofactory.com%2Fsql%2Fsubquery HTTP/1.1" 200 -
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DB6WCH3X9oyE'
+127.0.0.1 - - [06/Jan/2021 10:07:36] "GET /link_preview/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DB6WCH3X9oyE HTTP/1.1" 200 -
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DUrbItNGZU48'
+127.0.0.1 - - [06/Jan/2021 10:07:36] "GET /link_preview/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DUrbItNGZU48 HTTP/1.1" 200 -
+link_preview web_preview failed: [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D8jU8SrAPn9c'
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DsOvsDWIiKrY'
+127.0.0.1 - - [06/Jan/2021 10:07:39] "GET /link_preview/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DsOvsDWIiKrY HTTP/1.1" 200 -
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DGpC0XyiJPEo'
+127.0.0.1 - - [06/Jan/2021 10:07:43] "GET /link_preview/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DGpC0XyiJPEo HTTP/1.1" 200 -
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.tutorialspoint.com%2Fsqlite%2Fsqlite_views.htm%23%3A~%3Atext%3DA%20view%20is%20nothing%20more%2Cfrom%20one%20or%20more%20tables.'
+127.0.0.1 - - [06/Jan/2021 10:07:45] "GET /link_preview/https%3A%2F%2Fwww.tutorialspoint.com%2Fsqlite%2Fsqlite_views.htm%23%3A~%3Atext%3DA%2520view%2520is%2520nothing%2520more%2Cfrom%2520one%2520or%2520more%2520tables. HTTP/1.1" 200 -
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D8jU8SrAPn9c'
+127.0.0.1 - - [06/Jan/2021 10:07:48] "GET /link_preview/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D8jU8SrAPn9c HTTP/1.1" 200 -
+link_preview thumbnail.ws failed [Errno 2] No such file or directory: '/tmp/development/gitlab/lms42/data/link_previews/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DVKlNt3pkLaw'
+127.0.0.1 - - [06/Jan/2021 10:07:58] "GET /link_preview/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DVKlNt3pkLaw HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:13:36] "GET /curriculum/modify-subqueries/blaat HTTP/1.1" 404 -
+127.0.0.1 - - [06/Jan/2021 10:13:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:13:49] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:13:49] "GET /static/placeholder.png HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:13:52] "GET /people HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:13:52] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:13:52] "GET /static/placeholder.png HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:13:54] "GET /people/1 HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:13:54] "GET /static/croppie.min.css HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:13:54] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:13:54] "GET /static/croppie.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:13:54] "GET /static/placeholder.png HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:13:56] "GET /people HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:13:56] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:13:56] "GET /static/placeholder.png HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:13:57] "GET /people/new HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:13:57] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:13:57] "GET /static/croppie.min.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:13:57] "GET /static/placeholder.png HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:13:59] "GET /people HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jan/2021 10:14:00] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [06/Jan/2021 10:14:00] "GET /static/placeholder.png HTTP/1.1" 304 -
