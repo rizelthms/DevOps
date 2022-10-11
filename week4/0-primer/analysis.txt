@@ -1,0 +1,80 @@
+Do the following:
+--------------------------------------------------------------------
+1. Open a terminal in this directory and run the following command:
+    docker build -t devops-primer .
+
+Answer the following questions:
+- What does the '-t' option do? 
+    Your answer:
+
+- What is the purpose of the '.'? 
+    Your answer:
+
+
+--------------------------------------------------------------------
+2. In your terminal type the following:
+    docker images
+
+Answer the following questions:
+- What do you see?
+    Your answer:
+
+- What is the size of your image?
+    Your answer:
+
+
+--------------------------------------------------------------------
+3. In your terminal type the following:
+    docker run devops-primer
+
+Answer the following questions:
+- What do you see?
+    Your answer:
+
+- In the Dockerfile a file with the name 'who.who' is created. Where
+  can we find this file?
+    Your answer:
+
+
+--------------------------------------------------------------------
+4. In this folder you will find a file called script.sh. It executes 
+   the same commands as the RUN commands in the Dockerfile. Run the
+   script in your terminal as follows:
+    ./script.sh
+
+Answer the following questions:
+- What do you see?
+    Your answer:
+
+
+- Do you see the same result compared to running the container (in 
+  the previous step)? Explain why or why not.
+    Your answer:
+
+
+--------------------------------------------------------------------
+5. Replace the following line in the Dockerfile:
+    RUN echo "You are logged in as $(whoami)" > who.who
+   with:
+    RUN echo "Hello $(whoami)" > who.who
+
+   Save the Dockerfile and run the following command in the terminal:
+    docker run devops-primer
+
+Answer the following questions:
+- What do you see?
+    Your answer:
+
+- Was it what you expected? Explain why or why not.
+    Your answer:
+
+ 
+--------------------------------------------------------------------
+6. In your terminal type the following (two commands):
+    docker build -t devops-primer .
+    docker run devops-primer
+
+Answer the following questions:
+- What do you see?
+    Your answer:
+
