@@ -26,7 +26,7 @@ or on Mac using:
 brew install terraform
 ```
 
-## Install AWS CLI
+### Install AWS CLI
 The AWS CLI is an utility for issuing various AWS API commands at the command line.
 
 Install it on Windows using:
@@ -40,7 +40,7 @@ or on Mac using:
 brew install awscli
 ```
 
-## Set up AWS API credentials
+### Set up AWS API credentials
 Please ask your teacher for access to the sandbox AWS environment. Once you have access, go to your Learner lab -> AWS details -> AWS CLI. Copy the credential config to the `~/.aws/credentials` file on your laptop.
 
 Check if everything is set up correctly using the `aws sts get-caller-identity` command, which should return your name and user information. Your credentials will change every time your AWS lab environment is restarted, so you'll need to copy your new credentials to the credential file each time you start working with it.
