@@ -22,6 +22,9 @@ This is an intro to shell scripting with Bash. We will learn what shell scriptin
 **Article:** [Stay Out of Trouble](https://linuxcommand.org/lc3_wss0090.php)
 A look at some common mistakes that you might run into.
 
+**Article:** [Shell Script Best Practices](https://sharats.me/posts/shell-script-best-practices/)
+A few quick rules of thumb that can help you in writing safe and clean shell scripts.
+
 ## Assignment
 ### 1. Higher or lower
 **Tutorial:** [Generating Random Numbers In Bash With Examples](https://linuxconfig.org/generating-random-numbers-in-bash-with-examples)
