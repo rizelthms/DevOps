@@ -80,6 +80,9 @@ cb23db4 1. Edit README.md
 ```
 
 ### 4. Simple website scraper
+**Cheat sheet:** [Python for Java Developers: Basics](https://medium.com/nestedif/cheatsheet-python-for-java-developers-98f75c94a1a)
+A handy Python cheat sheet for Java developers.
+
 **Tutorial:** [How to Web Scrape with Python in 4 Minutes](https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc49186a8460)
 Web scraping is a technique to automatically access and extract large amounts of information from a website, which can save a huge amount of time and effort.
 
