@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  backend:
+    # TODO: Build the backend service using the provided Dockerfile (in 4-complete/backend) 
+  frontend:
+    # TODO: Run a nginx container with a volume mapping to serve the frontend (in 4-complete/frontend/...) 

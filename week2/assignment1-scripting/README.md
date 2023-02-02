@@ -68,7 +68,7 @@ Currently in trash:
 total 0
 -rw-r--r--  1 tse01  staff  0 Jun  7 13:35 delete.me
 $ ./trash -r delete.mine
-ERROR: No file or directory with the name 'delete.met' in trash.
+ERROR: No file or directory with the name 'delete.me' in trash.
 $ ./trash -r delete.me
 Restored 'delete.me'.
 $ ls

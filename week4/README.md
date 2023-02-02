@@ -134,13 +134,16 @@ Your task is to configure the default nginx container as a reverse proxy. You sh
 4. edit the script so that when you run `./todo.sh 3` it will serve serve the static website using nginx and reverse proxy requests to '/search' to google.com. You may reuse your script from the previous object.
 
 ### 6. Docker Compose
+**Video:** [Docker Compose in 12 Minutes](https://www.youtube.com/watch?v=Qw9zlE3t8Ko)
+Learn how to get multiple Docker containers to work together.
+
 **Tutorial:** [Get started with Docker Compose](https://docs.docker.com/compose/gettingstarted/)
 This tutorial explains how to create a simple web application using Docker Compose.
 
 Finally we have Docker Compose which can be used to run multiple containers together. With Docker Compose you can configure which images to build and which containers to run in one single file (called `docker-compose.yml`).
 
 Your task is to edit the `docker-compose.yml` in the `3-compose` folder so that a standard nginx container is started with:
-1. a volume mapping to the static website
+1. a volume mapping to the static website (`1-container`)
 2. and a port mapping to port 8080 (making the website reachable from http://localhost:8080).
 
 When you run `docker compose up` the website should be displayed.
@@ -153,15 +156,16 @@ In this assignment we will bring all aspects from the previous objects together 
 You should edit the `todo.sh` so that running `./todo.sh 4` will do everything that is required to run the application when running `docker compose up` (which should be the final command in the script). Your script should take the following requirements into account:
 
 1. For your frontend container:
-    - The code can be found [here](https://gitlab.com/sealy/simple-todo-app). In your script you should clone this repository to the `4-complete/frontend` folder.
-    - The frontend needs to be built before it can be served. When you run `npm build` a distribution is created in a folder called `dist`. The contents of this `dist` folder can be served using nginx.
-    - The frontend should be served by a web server container (nginx) mapped to the host computer on TCP port 80.
-    - Use a volume mapping to serve a distribution of the frontend app.
-    - The frontend web server should be configured as a reverse proxy that redirects request to [http://localhost/todos](http://localhost/todos) to the backend container. The name you give the container in your docker-compose file, can be used as a hostname within your nginx configuration file (just like the `redis` host can be used from within `app.py` in the *Get started with Docker Compose* resource).
+    - The code can be found at [https://gitlab.com/sealy/simple-todo-app](https://gitlab.com/sealy/simple-todo-app). Git clone this repository into the `4-complete/frontend` folder (from within your script).
+    - The git repository has a branch called `backend-connection`, switch to this branch using `git checkout`.
+    - The frontend should be served using nginx and should be **built first**. When you run `npm build` a distribution is created in a folder called `dist`. The contents of this `dist` folder can be served with an nginx container using a volume mapping. Configure this in the `docker-compose.yml` file. In your docker compose you should:
+        - Use an off-the-shelf web server container (nginx) with the local port (80) mapped to the host computer on port 8080.
+        - Use a volume mapping to serve a distribution (dist) folder of the frontend app.
+        - Configure Nginx to use a reverse proxy that redirects request from [http://localhost:8080/todos](http://localhost/todos) to the backend container. Note that you can use name of the container (*backend*) in your docker-compose file as a hostname within your nginx reverse proxy configuration file.
 2. For your backend container:
-    - The backend code can be found [here](https://gitlab.com/sealy/simple-todo-backend). In your script you should clone this repository to the `4-complete/backend` folder.
-    - The backend is a Flask application that can be run using poetry.
-    - Create a Docker image for running this backend. A simple python base image should be sufficient for running the app.                
+    - The backend code can be found at [https://gitlab.com/sealy/simple-todo-backend](https://gitlab.com/sealy/simple-todo-backend). Git clone this repository to the `4-complete/backend` folder (from within your script).
+    - The backend is a Flask application that can be run using Poetry. Edit the `Dockerfile` in `4-complete/backend` folder so that a Docker image is created with Poetry installed and the required files from the backend git repository (copied) into it. 
+    - Note that the backend application runs on port 80. You should do a port mapping to get the backend to run to port 8081 on you host computer. Don't forget to expose the port (80) in your Dockerfile.            
 
 ### 8. Clean up
 **Tutorial:** [Complete Guide for Removing Docker Images](https://linuxhandbook.com/remove-docker-images/)

@@ -30,7 +30,7 @@ In the previous assignment you have implemented a simple trash utility script. N
 
 First step would be to extend your script so that you can instruct it to create a "tarball" (a `.tar.gz` archive) from all files currently in the trash directory (for example using 'trash -a'). The archive tarballs should be placed in an `archive/` directory within your trash directory (so that would be `~/trash/archive` for example). When creating a tarball you should take care to exclude the `archive` directory (look in the `tar` man page for help on how to do exclusions). For the filename of the tarball, use the following pattern: `<year>-<month>-<day>-<hour>-<minute>.tar.gz`. When creating the tarball, all added files should be deleted from their original locations (again, take a look at the `tar` man page).
 
-After a successful manual implementation you can use cron to schedule periodical (daily) archiving of the trash. For testing you can use a smaller interval (5 minutes for example).
+After a successful manual implementation you can use cron to schedule periodical (daily) archiving of the trash. For testing you can use a smaller interval (5 minutes for example). Describe how you did this in the `cron.txt` file.
 
 ### 2. Search the trash
 **Tutorial:** [How to Search for Files from the Linux Command Line](https://www.linux.com/topic/desktop/how-search-files-linux-command-line/)
