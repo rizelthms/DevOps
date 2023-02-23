@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+ #!/usr/bin/env bash
 
 # Set the paths for the desktop and archive directories
 PATH_DESKTOP=~/Desktop/
@@ -31,6 +31,24 @@ done
 done
 }
 
-# Start the archive function  
+#If no arguments are provided, run the archive function
+if[$# -eq 0]; then
 archive
+fi
 
+#If user enters 'start', run the archive function in the background
+if["$1" == "start"];then
+/usr/bin/env/bash "$0" &
+exit 0
+fi
+
+#If the user enters 'stop', delete the symbolic link and kill the archive process
+if["$1" == "stop"];then
+rm "$PATH_DESKTOP/archive"
+pkill -f "bash $0"
+exit 0
+fi
+
+#If the user enters an unkown command, display an error message and exit
+echo "Unknown command: $1" >&2
+exit 1
