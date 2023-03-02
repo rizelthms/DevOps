@@ -1,0 +1,10 @@
+# Run once a day
+
+// runs once a day at 12:00 am
+0 0 * * *   bash trash.sh -a
+
+// runs once a day at 08:00 am
+0 8 * * *   bash trash.sh -a
+
+// run once every 5 minutes
+*/5 * * * * bash trash.sh -a
