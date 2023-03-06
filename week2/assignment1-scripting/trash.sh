@@ -2,14 +2,16 @@
 
 function printUsage() {
     echo "Usage:
-    trash <file>     : Moves the file to the trash.
-    trash -l         : Lists all the files in the trash.
-    trash -r <file>  : Moves the file from the trash to the current directory."
+    trash <file>       : Moves the file to the trash.
+    trash -l           : Lists all the files in the trash.
+    trash -r <file>    : Moves the file from the trash to the current directory.
+    trash -s <keyword> : Lists all the files in the trash that contain the keyword in their name.
+    trash -f <keyword> : Lists all the files in the trash that contain the keywoed in their contents."
 }
 
 user_home=$(bash -c "cd ~$(printf %q "$USER") && pwd")
 
-while getopts ":lr:" opt; do
+while getopts ":lr:s:f:" opt; do
     case $opt in
     l)
         echo "files in the trash:"
@@ -22,6 +24,16 @@ while getopts ":lr:" opt; do
         else
             mv ~/trash/"${FILE}" .
         fi
+        ;;
+    s)
+        SEARCH=$OPTARG
+        echo "searching for files containing '${SEARCH}' in name:"
+        ls -al ~/trash | grep "${SEARCH}"
+        ;;
+    f)
+        SEARCH=$OPTARG
+        echo "searching for files containing '${SEARCH}' in contents:"
+        grep -Rl "${SEARCH}" ~/trash/*
         ;;
     \?)
         echo "Invalid option: -$OPTARG"
