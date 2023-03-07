@@ -20,4 +20,5 @@ installing_dependencies:
 test_job:
   stage: test
   script: 
-   - python3 -m unitTests
+    - cd week3
+    - python3 -m unitTests
