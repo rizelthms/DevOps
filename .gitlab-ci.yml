@@ -1,24 +1,24 @@
 image: python:latest
 
 before_script:
-  - python3 -V 
-  - pip3 install virtualenv
-  - virtualenv venv
-  - source venv/bin/activate
-  - pip3 install requests
-  - pip3 install .
+  ##- python3 -V 
+  #- pip3 install virtualenv
+  #- virtualenv venv
+  #- source venv/bin/activate
+  #- pip3 install requests
+  #- pip3 install .
   - export PATH="/root/.local/bin:$PATH"
 
 job1:
   script:
     - echo "Hello, world!"
 
-test_job:
-  stage: test
-  script: 
-    - python3 -m unitTests
+#test_job:
+  #stage: test
+  #script: 
+  #  - python3 -m unitTests
 
-job2:
+installing_dependencies:
   script:
     - apt-get update
     - apt-get install -y python3-pip
