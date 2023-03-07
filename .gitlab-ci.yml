@@ -6,7 +6,7 @@ before_script:
   - virtualenv venv
   - source venv/bin/activate
   - pip3 install requests
-  - pip3 install .
+  - pip3 install week3/
 
 job:
   script:
@@ -15,4 +15,4 @@ job:
 test_job:
   stage: test
   script: 
-    - python3 -m unitTests
+    - python3 -m /week3/unitTests
