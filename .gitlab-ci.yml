@@ -7,8 +7,9 @@ before_script:
   - source venv/bin/activate
   - pip3 install requests
   - pip3 install .
+  - export PATH="/root/.local/bin:$PATH"
 
-job:
+job1:
   script:
     - echo "Hello, world!"
 
@@ -16,3 +17,11 @@ test_job:
   stage: test
   script: 
     - python3 -m unitTests
+
+job2:
+  script:
+    - apt-get update
+    - apt-get install -y python3-pip
+    - curl -sSL https://install.python-poetry.org/ | python3 - --git https://github.com/python-poetry/poetry.git@master
+    - cd week3
+    - poetry install
