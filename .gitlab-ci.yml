@@ -6,8 +6,8 @@ before_script:
   - virtualenv venv
   - source venv/bin/activate
   - pip3 install requests
-  - pip3 install .
-  - export PATH="/root/.local/bin:$PATH"
+  - pip3 install week3/
+
 
 job1:
   script:
@@ -15,8 +15,8 @@ job1:
 
 test_job:
   stage: test
-  script: 
-    - python3 -m unitTests
+  script:
+    - python3 -m /week3/unitTests
 
 job2:
   script:
