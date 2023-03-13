@@ -18,12 +18,18 @@ installing_dependencies:
 
 job_artifacts:
   script:
-    - apt-get update
-    - apt-get install -y python3-pip
-    - curl -sSL https://install.python-poetry.org/ | python3 - --git https://github.com/python-poetry/poetry.git@master
-    - cd week3
-    - poetry install
-    - poetry run python3 main_cli.py
+    - if [ "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" != "main" ]; then
+        echo "Not on the main branch";
+      else
+        apt-get update
+        apt-get install -y python3-pip
+        curl -sSL https://install.python-poetry.org/ | python3 - --git https://github.com/python-poetry/poetry.git@master
+        cd week3
+        poetry install
+        poetry run python3 main_cli.py
+      fi
+  only:
+    - main
   artifacts:
     paths:
       - week3/chart.txt
