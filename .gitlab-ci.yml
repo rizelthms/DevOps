@@ -18,7 +18,8 @@ installing_dependencies:
 
 build_and_release:
   script:
-    - if [ "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" != "main" ]; then
+    - >
+      if [ "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" != "main" ]; then
         echo "Not building release job because we are not on the main branch";
       else
         apt-get update
