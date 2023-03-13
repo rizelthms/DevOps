@@ -16,10 +16,10 @@ installing_dependencies:
     - cd week3
     - poetry install
 
-job_artifacts:
+build_and_release:
   script:
     - if [ "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" != "main" ]; then
-        echo "Not on the main branch";
+        echo "Not building release job because we are not on the main branch";
       else
         apt-get update
         apt-get install -y python3-pip
