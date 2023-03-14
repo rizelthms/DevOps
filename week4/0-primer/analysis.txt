@@ -5,10 +5,10 @@ Do the following:
 
 Answer the following questions:
 - What does the '-t' option do? 
-    Your answer:
+    Your answer: shorthand for 'tag', this allows us to provide a name (and, optionally, a tag) for this image
 
 - What is the purpose of the '.'? 
-    Your answer:
+    Your answer: '.' stands for the current directory, this way we specify that the image should be built with the contents of the current directory
 
 
 --------------------------------------------------------------------
@@ -17,10 +17,10 @@ Answer the following questions:
 
 Answer the following questions:
 - What do you see?
-    Your answer:
+    Your answer: a list of all images that my docker has currently with some info
 
 - What is the size of your image?
-    Your answer:
+    Your answer: 5.35MB
 
 
 --------------------------------------------------------------------
@@ -29,11 +29,11 @@ Answer the following questions:
 
 Answer the following questions:
 - What do you see?
-    Your answer:
+    Your answer: the output of the echo command specified in the dockerfile, "You are logged in as root"
 
 - In the Dockerfile a file with the name 'who.who' is created. Where
   can we find this file?
-    Your answer:
+    Your answer: under /my-app/who.who in the docker container created from our image
 
 
 --------------------------------------------------------------------
@@ -44,12 +44,12 @@ Answer the following questions:
 
 Answer the following questions:
 - What do you see?
-    Your answer:
+    Your answer: same echo command, but with my username in the output instead of 'root"
 
 
 - Do you see the same result compared to running the container (in 
   the previous step)? Explain why or why not.
-    Your answer:
+    Your answer: no, the username is different because the container runs in its own isolated Linux environment that has its own list of users and is not aware of my local username on my machine
 
 
 --------------------------------------------------------------------
@@ -63,10 +63,10 @@ Answer the following questions:
 
 Answer the following questions:
 - What do you see?
-    Your answer:
+    Your answer: same output as before the change
 
 - Was it what you expected? Explain why or why not.
-    Your answer:
+    Your answer: yes, because we run the image that was built with the original version of the dockerfile that had the old command in it.
 
  
 --------------------------------------------------------------------
@@ -76,5 +76,5 @@ Answer the following questions:
 
 Answer the following questions:
 - What do you see?
-    Your answer:
+    Your answer: now the output is that of the new command because we have built the image with the current version of the dockerfile
 

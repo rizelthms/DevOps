@@ -11,7 +11,7 @@ WORKDIR /my-app
 RUN touch who.who
 
 # In this line we run a script and store the results in the previously created file.
-RUN echo "You are logged in as $(whoami)" > who.who
+RUN echo "Hello $(whoami)" > who.who
 
 # Lastly we run the docker CMD command. This is used to execute an application in the
 # container. Should be done as last command.
