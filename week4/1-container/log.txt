@@ -5,3 +5,14 @@
 ::1 - - [23/Jun/2022 15:28:10] "GET /favicon.ico HTTP/1.1" 404 -
 ::1 - - [23/Jun/2022 15:28:11] code 404, message File not found
 ::1 - - [23/Jun/2022 15:28:11] "GET /serviceworker.js HTTP/1.1" 404 -
+172.17.0.1 - - [15/Mar/2023 11:33:43] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [15/Mar/2023 11:33:52] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [15/Mar/2023 11:33:53] "GET /style.css HTTP/1.1" 200 -
+172.17.0.1 - - [15/Mar/2023 11:33:53] "GET /docker-logo.png HTTP/1.1" 200 -
+172.17.0.1 - - [15/Mar/2023 11:33:53] code 404, message File not found
+172.17.0.1 - - [15/Mar/2023 11:33:53] "GET /favicon.ico HTTP/1.1" 404 -
+172.17.0.1 - - [15/Mar/2023 11:34:19] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [15/Mar/2023 11:34:19] "GET /style.css HTTP/1.1" 200 -
+172.17.0.1 - - [15/Mar/2023 11:34:19] "GET /docker-logo.png HTTP/1.1" 200 -
+172.17.0.1 - - [15/Mar/2023 11:34:19] code 404, message File not found
+172.17.0.1 - - [15/Mar/2023 11:34:19] "GET /favicon.ico HTTP/1.1" 404 -

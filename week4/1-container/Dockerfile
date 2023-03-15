@@ -6,7 +6,7 @@ FROM python:3.10-slim-buster
 
 WORKDIR /app
 
-COPY index.html style.css docker-logo.png start.sh ./
+COPY * .
 
 EXPOSE 9000
 
