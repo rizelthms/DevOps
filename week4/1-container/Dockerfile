@@ -4,8 +4,11 @@
 # python is already installed in the container. 
 FROM python:3.10-slim-buster
 
-# TODO: Add your code here.
+WORKDIR /app
+
+COPY index.html style.css docker-logo.png start.sh ./
 
 EXPOSE 9000
 
-# TODO: And maybe here ;)
+CMD ["./start.sh"]
+
