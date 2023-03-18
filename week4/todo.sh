@@ -13,10 +13,12 @@
 
 
 # TODO: ./todo.sh 3
-#       Configure a standard nginx container to reverse proxy to google. 
-#       If needed copy the commands from ./todo.sh 2 to serve the static website (using volume mapping).
-#       Create a volume mapping to the reverse-proxy configuration located in 2-reverse-proxy.
-#       Properly configure the 2-reverse-proxy/reverse_proxy.conf so that request to /search go to google.com.
+docker run -d \
+    -it \
+    -v "$PWD"/www:/www:ro \
+    -v "$PWD"/conf.d:/etc/nginx/conf.d:ro \
+    -p 8080:80 \
+    nginx:latest
 
 
 # TODO: ./todo.sh 4
