@@ -1,9 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 # TODO: ./todo.sh 1
-#       Build and run the container in 1-container. 
-#       Give the image a proper name (or tag) using the -t flag.
-#       Run the container in detached mode using the -d flag and give it a proper name.
+docker build -t website-image:latest 1-container;
+docker run -d --name website-container website-image:latest;
 
 
 # TODO: ./todo.sh 2
