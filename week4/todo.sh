@@ -12,7 +12,7 @@ docker run -d -p9000:9000 --name website-container website-image:latest;
 
 
 # TODO: ./todo.sh 3
-docker run -p 8080:80 -v 2-reverse-proxy:/etc/nginx/conf.d nginx
+docker run --name reverseProxy -p 8080:80 -v 2-reverse-proxy:/etc/nginx/conf.d nginx
 
 
 
