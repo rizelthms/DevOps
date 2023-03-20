@@ -1,21 +1,15 @@
 #!/bin/bash
 
-# TODO: ./todo.sh 1
-docker build -t website-image:latest 1-container;
-docker run -d -p9000:9000 --name website-container website-image:latest;
-
-
-# TODO: ./todo.sh 2
-#       Serve static content using a standard nginx container. 
-#       Give the image a proper name (or tag) using the -t flag.
-#       Create a volume mapping to serve the static web site located in 1-container.
-
-
-# TODO: ./todo.sh 3
-docker run --name reverseProxy -p 8080:80 -v 2-reverse-proxy:/etc/nginx/conf.d nginx
-
-
-
+if [[ $1 -eq 1 ]]; then
+    docker build -t website-image:latest 1-container
+    docker run -d -p9000:9000 --name website-container website-image:latest
+elif [[ $1 -eq 2 ]]; then
+    docker pull nginx:latest
+    docker run --name nginx-static-website --rm -v 1-container:/usr/share/nginx/html -p 8080:80 -d nginx:latest
+elif [[ $1 -eq 3 ]]; then
+    docker run --name reverseProxy -p 8080:80 -v 2-reverse-proxy:/etc/nginx/conf.d nginx
+elif [[ $1 -eq 4 ]]; then
+    echo todo4
 # TODO: ./todo.sh 4
 #       Clone and run the simple-todo-app using an nginx container.
 #       Clone the simple-todo-app from https://gitlab.com/sealy/simple-todo-app
@@ -23,7 +17,11 @@ docker run --name reverseProxy -p 8080:80 -v 2-reverse-proxy:/etc/nginx/conf.d n
 #       Run an nginx container that has a volume mapping to the build distribution (the dist folder)
 
 
+elif [[ $1 -eq 5 ]]; then
+    echo todo5
 # TODO: ./todo.sh 5
 #       Clean up your stuff.
 #       Stop all your containers (so other containers should not be stopped)
 #       Remove your images (please leave the other images alone)
+
+fi
