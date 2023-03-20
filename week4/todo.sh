@@ -2,7 +2,7 @@
 
 # TODO: ./todo.sh 1
 docker build -t website-image:latest 1-container;
-docker run -d --name website-container website-image:latest;
+docker run -d -p9000:9000 --name website-container website-image:latest;
 
 
 # TODO: ./todo.sh 2
