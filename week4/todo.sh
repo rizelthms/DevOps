@@ -12,12 +12,8 @@ docker run -d -p9000:9000 --name website-container website-image:latest;
 
 
 # TODO: ./todo.sh 3
-docker run -d \
-    -it \
-    -v "$PWD"/www:/www:ro \
-    -v "$PWD"/conf.d:/etc/nginx/conf.d:ro \
-    -p 8080:80 \
-    nginx:latest
+docker run -p 8080:80 -v 2-reverse-proxy:/etc/nginx/conf.d nginx
+
 
 
 # TODO: ./todo.sh 4
