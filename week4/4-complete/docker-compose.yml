@@ -1,6 +1,21 @@
 version: "3.9"
 services:
   backend:
-    # TODO: Build the backend service using the provided Dockerfile (in 4-complete/backend) 
+    build: backend
+    image: backend-python
+    container_name: backend
+    ports:
+      - "8081:80"
+
   frontend:
-    # TODO: Run a nginx container with a volume mapping to serve the frontend (in 4-complete/frontend/...) 
+    build: frontend
+    image: frontend-nginx
+    container_name: frontend
+    #container should restart automatically unless explicitly stopped
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      # specifies that the container should mount the local directory to a directory inside the container
+      - ./frontend/simple-todo-app/dist:/usr/share/nginx/html
+      - ./frontend/reverse_proxy.conf:/etc/nginx/conf.d/default.conf:ro
