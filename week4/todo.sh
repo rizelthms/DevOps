@@ -5,7 +5,7 @@ if [[ $1 -eq 1 ]]; then
     docker run -d -p9000:9000 --name website-container website-image:latest
 elif [[ $1 -eq 2 ]]; then
     docker pull nginx:latest
-    docker run --name nginx-static-website --rm -v 1-container:/usr/share/nginx/html -p 8080:80 -d nginx:latest
+    docker run --name nginx-static-website -v "$(pwd)/1-container":"/usr/share/nginx/html" -p 8080:80 -d nginx:latest
 elif [[ $1 -eq 3 ]]; then
     docker run --name reverseProxy -p 8080:80 -v 2-reverse-proxy:/etc/nginx/conf.d nginx
 elif [[ $1 -eq 4 ]]; then
