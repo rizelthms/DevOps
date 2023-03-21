@@ -18,10 +18,10 @@ elif [[ $1 -eq 4 ]]; then
 
 
 elif [[ $1 -eq 5 ]]; then
-    echo todo5
 # TODO: ./todo.sh 5
-#       Clean up your stuff.
-#       Stop all your containers (so other containers should not be stopped)
-#       Remove your images (please leave the other images alone)
-
+    docker stop $(docker ps -aq);
+    images=("website-image" "devops-primer" "nginx")
+    for image in "${images[@]}"; do
+        docker rmi $(docker images -q "$image")
+    done
 fi
