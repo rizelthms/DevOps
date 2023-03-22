@@ -32,8 +32,10 @@ build_and_release:
     - poetry install
     - poetry run python3 main_cli.py
   only:
-    - main
-    - "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" != "main"
+    refs:
+      - main
+    variables:
+      - $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == 'main'
   artifacts:
     paths:
       - week3/chart.txt
