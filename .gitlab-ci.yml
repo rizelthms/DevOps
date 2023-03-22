@@ -31,11 +31,8 @@ build_and_release:
     - cd week3
     - poetry install
     - poetry run python3 main_cli.py
-  only:
-    refs:
-      - main
-    variables:
-      - $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == 'main'
+  rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == 'main'
   artifacts:
     paths:
       - week3/chart.txt
