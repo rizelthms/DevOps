@@ -32,7 +32,7 @@ build_and_release:
     - poetry install
     - poetry run python3 main_cli.py
   rules:
-    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == 'main'
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
   artifacts:
     paths:
       - week3/chart.txt
