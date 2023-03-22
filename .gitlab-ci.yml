@@ -37,8 +37,8 @@ build_and_release:
     paths:
       - week3/chart.txt
     expire_in: 1 week
-  needs: 
-    - [installing_dependencies]
+  dependencies:
+    - installing_dependencies
 
 
 test_job:
