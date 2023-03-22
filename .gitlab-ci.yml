@@ -1,14 +1,21 @@
 image: python:latest
 
+stages:
+  - build
+  - test
+  - deploy
+
 before_script:
   - export PATH="/root/.local/bin:$PATH"
 
 job1:
+  stage: build
   script:
     - echo "Hello, world!"
 
 
 installing_dependencies:
+  stage: build
   script:
     - apt-get update
     - apt-get install -y python3-pip
@@ -17,24 +24,22 @@ installing_dependencies:
     - poetry install
 
 build_and_release:
+  stage: deploy
   script:
-    - >
-      if [ "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" != "main" ]; then
-        echo "Not building release job because we are not on the main branch";
-      else
-        apt-get update
-        apt-get install -y python3-pip
-        curl -sSL https://install.python-poetry.org/ | python3 - --git https://github.com/python-poetry/poetry.git@master
-        cd week3
-        poetry install
-        poetry run python3 main_cli.py
-      fi
+    - apt-get update
+    - curl -sSL https://install.python-poetry.org/ | python3 - --git https://github.com/python-poetry/poetry.git@master
+    - cd week3
+    - poetry install
+    - poetry run python3 main_cli.py
   only:
     - main
+    - "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" != "main"
   artifacts:
     paths:
       - week3/chart.txt
     expire_in: 1 week
+  needs: 
+    - build
 
 
 test_job:
