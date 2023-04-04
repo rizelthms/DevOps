@@ -44,3 +44,43 @@ resource "aws_route_table_association" "main_route_table_association" {
     subnet_id = aws_subnet.my_subnet.id
     route_table_id = aws_route_table.main_route_table.id
 }
+
+resource "aws_instance" "main_instance" {
+  ami = "ami-007855ac798b5175e"
+  instance_type = "t2.micro"
+  subnet_id = aws_subnet.my_subnet.id
+  key_name      = "MainKey"
+  security_groups = [aws_security_group.main_security_group.id]
+
+  user_data = templatefile("${path.module}/templates/nginx_install.sh", {})
+
+      tags = {
+    Name = "MainInstance"
+  }
+}
+
+resource "aws_security_group" "main_security_group" {
+  name = "MainSG"
+  vpc_id = aws_vpc.main_vpc.id
+  
+  ingress {
+    from_port = 80
+    to_port = 80
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    }
+
+  ingress {
+    from_port = 22
+    to_port = 22
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    }
+
+   egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+   }
+}
