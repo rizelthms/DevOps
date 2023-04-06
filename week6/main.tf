@@ -52,7 +52,7 @@ resource "aws_instance" "main_instance" {
   key_name      = "MainKey"
   security_groups = [aws_security_group.main_security_group.id]
 
-  user_data = templatefile("${path.module}/templates/nginx_install.sh", {})
+  user_data = templatefile("${path.module}/templates/nginx_config.sh", {})
 
       tags = {
     Name = "MainInstance"
